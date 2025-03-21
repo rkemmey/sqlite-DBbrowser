@@ -11,18 +11,6 @@ def create_connection(path):
 
     return connection
 
-def execute_query(connection, query):
-    cursor = connection.cursor() #create cursor on connection instance to execute queries
-    try:
-        if query == "":
-            return "Query Blank"
-        else:
-            cursor.execute(query)
-            connection.commit()
-            return "Query executed successfully"
-    except Error as e:
-        return "Error occurred: " + str(e)
-
 def main():
     database = "mydatabase.db" # creates db file
     try:
@@ -36,4 +24,17 @@ def main():
 if __name__ == '__main__':
     main()
 
-#sudo apt-get install sqlitebrowser
+
+
+# Execute query function
+# def execute_query(connection, query):
+#     cursor = connection.cursor() #create cursor on connection instance to execute queries
+#     try:
+#         if query == "":
+#             return "Query Blank"
+#         else:
+#             cursor.execute(query)
+#             connection.commit()
+#             return "Query executed successfully"
+#     except Error as e:
+#         return "Error occurred: " + str(e)
